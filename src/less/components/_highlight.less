@@ -1,0 +1,11 @@
+.highlight {
+    @apply .bg-inherit .text-black .font-medium .px-1 .rounded;
+
+    background-color: #fbf9c9;
+
+    transition: background-color 1s ease-in, color 1s ease-in;
+}
+
+body[data-dark] .highlight {
+    background-color: #4e4b06;
+}

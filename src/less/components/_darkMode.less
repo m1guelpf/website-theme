@@ -1,0 +1,35 @@
+:root {
+    --sepia-500: #f5f5f0;
+    --sepia-900: #3c371e;
+    --sepia-300: #3c371e99;
+    --sepia-100: #3c371e4d;
+
+    --blue-500: #1e64c8;
+
+    --white: #ffffff;
+    --black: #000000;
+}
+
+body[data-dark] {
+    --sepia-500: #181a1b;
+    --sepia-900: #e8e6e3;
+    --sepia-300: #d5d2cc99;
+    --sepia-100: #d5d2cc4d;
+
+    --blue-500: #65a9e8;
+
+    --white: #3c371e99;
+    --black: #e8e6e3;
+}
+
+body {
+    transition: background-color 1s ease-in, color 1s ease-in;
+}
+
+a {
+    transition: border-color 1s ease-in;
+}
+
+.bg-white {
+    transition: background-color 1s ease-in;
+}
