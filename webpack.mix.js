@@ -4,7 +4,7 @@ require('mix-tailwindcss');
 Mix.manifest.refresh = _ => void 0
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
-    content: ['./public/**/*.html'],
+    content: ['./**/*.hbs'],
     defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 })
 
@@ -20,7 +20,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
  */
 
 mix
-    .less('src/less/style.less', 'public/css')
+    .less('src/less/style.less', 'assets/css')
     .options({
         postCss: [
             require('tailwindcss'),
@@ -30,5 +30,5 @@ mix
                 []
         ]
     })
-    .babel(['src/js/index.js'], 'public/js/script.js')
-    .setPublicPath('public/');
+    .js('src/js/index.js', 'assets/js')
+    .setPublicPath('assets/');

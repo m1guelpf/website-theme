@@ -1,4 +1,22 @@
 {
+  "name": "mp-theme",
+  "description": "Ghost theme for miguelpiedrafita.com",
+  "keywords": [
+    "ghost-theme"
+  ],
+  "version": "0.0.1",
+  "engines": {
+    "ghost-api": "v2"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Miguel Piedrafita",
+    "email": "soy@miguelpiedrafita.com"
+  },
+  "config": {
+    "posts_per_page": 9999,
+    "image_sizes": {}
+  },
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -16,6 +34,10 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "mix-tailwindcss": "^1.1.0",
-    "tailwindcss": "^1.0"
+    "tailwindcss": "^1.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "resize-detector": "^0.2.0"
   }
 }

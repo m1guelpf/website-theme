@@ -1,6 +1,8 @@
-document.getElementById('themeToggle').onclick = () => {
-    document.body.toggleAttribute('data-dark');
-}
+import './components/darkMode';
+import './components/feature-image';
+import './components/koeing-gallery';
+
+import './lib/prism';
 
 Array.from(document.getElementsByTagName('a')).forEach(link => {
     link.addEventListener('transitionrun', () => {

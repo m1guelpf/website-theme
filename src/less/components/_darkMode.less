@@ -3,14 +3,16 @@
     --sepia-900: #3c371e;
     --sepia-300: #3c371e99;
     --sepia-100: #3c371e4d;
-
+    
     --blue-500: #1e64c8;
+    --yellow-300: #e8d87e;
+    --orange-400: #ff8a00;
 
     --white: #ffffff;
     --black: #000000;
 }
 
-body[data-dark] {
+[data-dark] {
     --sepia-500: #181a1b;
     --sepia-900: #e8e6e3;
     --sepia-300: #d5d2cc99;
@@ -18,22 +20,38 @@ body[data-dark] {
 
     --blue-500: #65a9e8;
 
-    --white: #3c371e99;
+    --white: #3c371e;
     --black: #e8e6e3;
 }
 
-body {
-    transition: background-color 1s ease-in, color 1s ease-in;
-}
-
-h1 {
-    transition: color 1s ease-in;
-}
-
-a {
+* {
     transition: border-color 1s ease-in;
 }
 
-.bg-white {
+body {
+    transition: color 1s ease-in, background-color 1s ease-in;
+}
+
+h1, .text-sepia-300, .text-sepia-100, .text-blue-500 {
+    transition: color 1s ease-in;
+
+    & a {
+        transition: color 1s ease-in, border-color 1s ease-in;
+    }
+}
+
+.border-transition, a {
+    transition: border-color 1s ease-in;
+}
+
+.bg-white, .bg-blue-500, .background-transition {
     transition: background-color 1s ease-in;
+}
+
+.text-transition {
+    transition: color 1s ease-in;
+}
+
+.border-width-transition {
+    transition: border-width 1s ease-in;
 }

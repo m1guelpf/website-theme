@@ -1,0 +1,19 @@
+.navigation {
+    @apply text-sm text-sepia-100 text-center;
+
+    a {
+        @apply mr-2;
+
+        transition: color 1s ease-in;
+
+        &:hover {
+            @apply text-blue-500 border-blue-500 border-b-2;
+        }
+    }
+}
+
+@screen md {
+    .navigation a {
+        @apply mr-0 ml-1;
+    }
+}
