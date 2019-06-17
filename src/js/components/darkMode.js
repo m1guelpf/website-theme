@@ -1,5 +1,6 @@
-
-
+window.addEventListener('load', () => {
+    document.body.classList.remove('preload')
+});
 (function () {
     window.__onThemeChange = function () {};
 

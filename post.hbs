@@ -14,20 +14,20 @@
             </nav>
         </div>
     </div>
-    <div class="bg-white dark:bg-sepia-500 md:bg-transparent background-transition">
+    <div class="bg-white dark:bg-sepia-500 background-transition">
         <header class="max-w-4xl md:max-w-full mx-6 md:mx-0 relative z-20 flex items-center justify-around flex-col-reverse md:bg-white md:dark:bg-sepia-500 md:flex-row md:rounded-br-huge background-transition">
-            <div id="blobbed" class="my-4 max-w-sm">
-                <img src="{{ img_url feature_image }}" class="rounded flex shadow" alt="{{ title }}">
+            <div id="blobbed" class="my-4">
+                <img src="{{ img_url feature_image }}" class="rounded flex shadow max-h-sm" alt="{{ title }}">
             </div>
             <div class="max-w-lg mx-auto md:mx-0 flex flex-col justify-center z-20">
-                <div class="flex items-center">
+                <div class="flex items-center justify-center md:justify-start">
                 {{#primary_tag}}
                     <a href="{{url}}" title="{{name}}" class="py-1 px-4 shadow no-underline rounded-full font-sans font-semibold text-sm focus:outline-none focus:shadow-outline mr-2 hover:shadow-md dark:border-2 dark:border-sepia-900 border-width-transition">{{name}}</a>
                 {{/primary_tag}}
                 </div>
                 <h1 class="text-5xl font-semibold text-center md:text-left" style="transition: none;">{{ title }}</h1>
-                <p class="">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank">{{authors separator=" | " autolink="false"}}</a></p>
-                <div class="mt-4 flex items-center">
+                <p class="text-center md:text-left">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank">{{authors separator=" | " autolink="false"}}</a></p>
+                <div class="mt-4 flex items-center justify-center md:justify-start">
                     <svg class="w-5 h-5 mr-1 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.1907692,24 C4.5625628,24 0,19.4374372 0,13.8092308 C0,8.18102433 4.5625628,3.61846154 10.1907692,3.61846154 C15.8189757,3.61846154 20.3815385,8.18102433 20.3815385,13.8092308 C20.3815385,19.4374372 15.8189757,24 10.1907692,24 Z M10.1907692,22 C14.7144062,22 18.3815385,18.3328677 18.3815385,13.8092308 C18.3815385,9.28559383 14.7144062,5.61846154 10.1907692,5.61846154 C5.6671323,5.61846154 2,9.28559383 2,13.8092308 C2,18.3328677 5.6671323,22 10.1907692,22 Z"
@@ -45,17 +45,22 @@
         </header>
     </div>
     <div class="relative mb-8" style="transition: none;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));">
-        <div class="overflow-hidden md:-mt-48 pt-4 md:pt-header z-20 mx-8">
-            <div class="flex flex-col md:flex-row items-center justify-between p-2 mb-4">
-                <div class="flex items-center justify-start text-white text-transition font-semibold">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2 cursor-pointer"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        <div class="overflow-hidden md:-mt-48 pt-4 md:pt-header z-20 md:mx-8">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between p-2 mb-4 mx-4 md:mx-0">
+                <div style="display:none;" class="flex items-center justify-center text-white text-transition font-semibold" data-blogcast-player>
+                    <svg id="playAudioBtn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 md:w-5 md:h-5 mr-2 cursor-pointer"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    <svg id="pauseAudioBtn" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2 cursor-pointer"><circle cx="12" cy="12" r="10"></circle><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>
                     <p>Listen to this article, proudly powered by <a class="border-b-2 border-white hover:text-sepia-300 hover:border-sepia-300" href="https://blogcast.host/?ref=website" target="_blank">Blogcast</a>.</p>
+                    <audio id="blogcastPlayer" src="https://blogcast.host/embed.mp3?url={{url absolute="true"}}"></audio>
                 </div>
-                <div class="flex items-center justify-center text-sm text-white text-transition">
+                <div class="text-white text-transition font-semibold" data-blogcast-error>
+                    <p class="text-center md:text-left">Generate audio versions of your articles with <a class="border-b-2 border-white hover:text-sepia-300 hover:border-sepia-300" href="https://blogcast.host/?ref=website" target="_blank">Blogcast</a>.</p>
+                </div>
+                <div class="flex items-center justify-center text-sm text-white text-transition mb-4 md:mb-0">
                         <h3 class="font-medium">Share this:</h3>
                         <ul class="ml-4 flex items-center rounded-lg">
                             <li class="border rounded-l px-1 border-white hover:text-sepia-300">
-                                <a rel="nofollow noopener noreferrer" href="#" target="_blank" title="Click to share on Twitter">
+                                <a rel="nofollow noopener noreferrer" href="http://twitter.com/share?text={{encode title}}&url={{url absolute='true'}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" target="_blank" title="Click to share on Twitter">
                                     <span>Twitter</span>
                                 </a>
                             </li>

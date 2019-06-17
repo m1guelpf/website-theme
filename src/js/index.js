@@ -1,6 +1,8 @@
 import './components/darkMode';
 import './components/feature-image';
 import './components/koeing-gallery';
+import './components/blogcast-whitelabel';
+import './components/article-listings';
 
 import './lib/prism';
 

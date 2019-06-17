@@ -1,0 +1,44 @@
+{{!< default}}
+
+<div class="pt-6 max-w-4xl lg:mx-auto mx-6">
+  <header class="flex items-center justify-between pb-6">
+    <div class="flex-1 text-blue-500 uppercase text-sm font-medium tracking-px text-center md:text-left">
+        <h1>Miguel Piedrafita &mdash; 17-&#65279;year-&#65279;old&nbsp;<span
+                class="inline md:hidden">indie&nbsp;</span>maker</h1>
+    </div>
+    <div class="hidden md:block">
+        {{{ navigation }}}
+    </div>
+  </header>
+  <div class="mt-16 animation animation-fadeInUp animation-delay-2">
+    <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">My articles</h3>
+    <p class="mt-4" id="article">Here's a list of all the articles I've ever written. The ones I'm most proud of have a star next to their title, maybe you would like to <a class="cursor-pointer" data-toggle-featured>see only featured articles</a>? Or, if you're feeling overwhelmed, how about a <a class="cursor-pointer" data-toggle-simplified-view>simplified view</a>?</p>
+  </div>
+  <div id="article" class="mt-12 animation animation-fadeInUp animation-delay-4">
+    {{#foreach posts}}
+      <article class="{{post_class}} opacity-transition height-transition" data-article-listing {{#if featured}}data-featured{{else}}data-not-featured{{/if}}>
+          <header class="post-header">
+              <h2 class="flex items-center">
+                <a href="{{url}}">{{title}}</a>
+                {{#if featured}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 fill-yellow-400 dark:fill-yellow-500 dark:stroke-yellow-500" style="transition: fill 1s ease-in, stroke 1s ease-in">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+                {{/if}}
+              </h2>
+          </header>
+          <section class="opacity-transition height-transition" data-post-excerpt>
+              <p>{{excerpt}}</p>
+          </section>
+          <footer class="opacity-transition height-transition" data-post-meta>
+            {{#primary_tag}}
+              <a data-ignore-link-styling href="{{url}}" title="{{name}}" class="py-1 px-4 shadow bg-white no-underline rounded-full font-sans font-semibold text-sm focus:outline-none focus:shadow-outline mr-2 hover:shadow-md dark:border-2 dark:border-sepia-900 border-width-transition background-transition">{{name}}</a>
+            {{/primary_tag}}
+            &mdash;
+              <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM YYYY"}}</time>
+          </footer>
+      </article>
+    {{/foreach}}
+  </div>
+</div>

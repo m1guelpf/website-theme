@@ -35,11 +35,14 @@ module.exports = {
       fill: theme => {
         return theme('colors')
       },
+      stroke: theme => {
+        return theme('colors')
+      },
       borderRadius: {
         'huge': '200px'
       },
-      zIndex: {
-        'm10': '-10'
+      maxHeight: {
+        'sm': '16rem'
       }
     },
   },

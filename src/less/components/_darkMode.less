@@ -44,14 +44,35 @@ h1, .text-sepia-300, .text-sepia-100, .text-blue-500 {
     transition: border-color 1s ease-in;
 }
 
+.border-width-transition {
+    transition: border-width 1s ease-in;
+}
+
 .bg-white, .bg-blue-500, .background-transition {
     transition: background-color 1s ease-in;
+
+    &.border-width-transition {
+        transition: background-color 1s ease-in, border-width 1s ease-in;
+    }
 }
 
 .text-transition {
     transition: color 1s ease-in;
 }
 
-.border-width-transition {
-    transition: border-width 1s ease-in;
+.height-transition {
+    transition: height 1s ease-in;
+}
+
+.opacity-transition {
+    transition: opacity 1s ease-in;
+
+    &.height-transition {
+        transition: opacity 1s ease-in, transform 1s ease-in;
+    }
+}
+
+
+.preload * {
+    transition: none !important;
 }

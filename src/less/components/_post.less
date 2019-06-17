@@ -2,14 +2,14 @@
     @apply .font-body;
 
     h2 {
-        @apply .text-3xl;
+        @apply .text-3xl .my-6;
     }
 
     p {
         @apply .font-medium .text-xl .my-4;
     }
 
-    a {
+    a:not([data-ignore-link-styling]) {
         @apply .border-b-2 .border-sepia-900;
 
         &:hover {

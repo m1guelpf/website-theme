@@ -428,12 +428,110 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/js/components/article-listings.js":
+/*!***********************************************!*\
+  !*** ./src/js/components/article-listings.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var toggleFeatured = document.querySelector('[data-toggle-featured]');
+var toggleSimplified = document.querySelector('[data-toggle-simplified-view]');
+var articleElements = Array.from(document.querySelectorAll('[data-article-listing]'));
+var featuredArticles = Array.from(document.querySelectorAll('[data-article-listing][data-featured]'));
+var notFeaturedArticles = Array.from(document.querySelectorAll('[data-article-listing][data-not-featured]'));
+
+if (toggleFeatured && featuredArticles && notFeaturedArticles) {
+  toggleFeatured.addEventListener('click', function () {
+    var shouldDisable = notFeaturedArticles[0].style.display == 'none';
+
+    if (shouldDisable) {
+      articleElements.forEach(function (article) {
+        article.style.display = null;
+      });
+    } else {
+      notFeaturedArticles.forEach(function (article) {
+        article.style.display = 'none';
+      });
+    }
+  });
+}
+
+if (toggleSimplified && articleElements) {
+  var articles = articleElements.map(function (article) {
+    return {
+      root: article,
+      excerpt: article.querySelector('[data-post-excerpt]'),
+      meta: article.querySelector('[data-post-meta]')
+    };
+  });
+  toggleSimplified.addEventListener('click', function () {
+    var shouldDisable = articles[0].meta.style.display == 'none';
+
+    if (shouldDisable) {
+      articles.forEach(function (article) {
+        article.excerpt.style.display = article.meta.style.display = null;
+      });
+    } else {
+      articles.forEach(function (article) {
+        article.excerpt.style.display = article.meta.style.display = 'none';
+      });
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/components/blogcast-whitelabel.js":
+/*!**************************************************!*\
+  !*** ./src/js/components/blogcast-whitelabel.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var playerContainer = document.querySelector('[data-blogcast-player]');
+var playerFallback = document.querySelector('[data-blogcast-error]');
+var playBtn = document.getElementById('playAudioBtn');
+var pauseBtn = document.getElementById('pauseAudioBtn');
+var blogcastPlayer = document.getElementById('blogcastPlayer');
+
+if (playerContainer && playerFallback && blogcastPlayer) {
+  blogcastPlayer.addEventListener('loadeddata', function () {
+    playerFallback.style.display = 'none';
+    playerContainer.style.display = null;
+  });
+}
+
+if (playBtn && pauseBtn && blogcastPlayer) {
+  playBtn.addEventListener('click', function () {
+    blogcastPlayer.play();
+    playBtn.style.display = 'none';
+    pauseBtn.style.display = null;
+  });
+  pauseBtn.addEventListener('click', function () {
+    blogcastPlayer.pause();
+    playBtn.style.display = null;
+    pauseBtn.style.display = 'none';
+  });
+  blogcastPlayer.addEventListener('ended', function () {
+    blogcastPlayer.currentTime = 0;
+    playBtn.style.display = null;
+    pauseBtn.style.display = 'none';
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/components/darkMode.js":
 /*!***************************************!*\
   !*** ./src/js/components/darkMode.js ***!
   \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
+
+window.addEventListener('load', function () {
+  document.body.classList.remove('preload');
+});
 
 (function () {
   window.__onThemeChange = function () {};
@@ -527,8 +625,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_feature_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/feature-image */ "./src/js/components/feature-image.js");
 /* harmony import */ var _components_koeing_gallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/koeing-gallery */ "./src/js/components/koeing-gallery.js");
 /* harmony import */ var _components_koeing_gallery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_koeing_gallery__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_prism__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/prism */ "./src/js/lib/prism.js");
-/* harmony import */ var _lib_prism__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_prism__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_blogcast_whitelabel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/blogcast-whitelabel */ "./src/js/components/blogcast-whitelabel.js");
+/* harmony import */ var _components_blogcast_whitelabel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_blogcast_whitelabel__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_article_listings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/article-listings */ "./src/js/components/article-listings.js");
+/* harmony import */ var _components_article_listings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_article_listings__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _lib_prism__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/prism */ "./src/js/lib/prism.js");
+/* harmony import */ var _lib_prism__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_prism__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
