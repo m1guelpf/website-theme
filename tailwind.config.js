@@ -43,11 +43,15 @@ module.exports = {
       },
       maxHeight: {
         'sm': '16rem'
+      },
+      maxWidth: {
+        'screen': '100vw'
       }
     },
   },
   variants: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus', 'active', 'dark',],
   plugins: [
+    require('@tailwindcss/custom-forms'),
     function({ addVariant, e }) {
       addVariant('dark', ({ container, separator }) => {
         container.walkRules(rule => {

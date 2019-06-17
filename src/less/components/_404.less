@@ -1,0 +1,30 @@
+.animate-squiggly {
+    animation: squiggly-anim 0.34s linear infinite;
+}
+
+@keyframes squiggly-anim {
+    0% {
+        -webkit-filter: url("#squiggly-0");
+        filter: url("#squiggly-0");
+    }
+
+    25% {
+        -webkit-filter: url("#squiggly-1");
+        filter: url("#squiggly-1");
+    }
+
+    50% {
+        -webkit-filter: url("#squiggly-2");
+        filter: url("#squiggly-2");
+    }
+
+    75% {
+        -webkit-filter: url("#squiggly-3");
+        filter: url("#squiggly-3");
+    }
+
+    100% {
+        -webkit-filter: url("#squiggly-4");
+        filter: url("#squiggly-4");
+    }
+}

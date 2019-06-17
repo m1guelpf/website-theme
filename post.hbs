@@ -1,33 +1,28 @@
 {{!< default}}
 
-{{#post}}
     <div class="bg-white dark:bg-sepia-500">
-        <div class="pt-6 max-w-4xl lg:mx-auto mx-6">
-            <nav class="flex items-center justify-between pb-6">
-                <div class="flex-1 uppercase text-sm font-medium tracking-px text-center md:text-left">
-                    <p>Miguel Piedrafita &mdash; 17-&#65279;year-&#65279;old&nbsp;<span
-                            class="inline md:hidden">indie&nbsp;</span>maker</p>
-                </div>
-                <div class="hidden md:block">
-                    {{{ navigation }}}
-                </div>
-            </nav>
-        </div>
+        {{> header }}
     </div>
+{{#post}}
     <div class="bg-white dark:bg-sepia-500 background-transition">
         <header class="max-w-4xl md:max-w-full mx-6 md:mx-0 relative z-20 flex items-center justify-around flex-col-reverse md:bg-white md:dark:bg-sepia-500 md:flex-row md:rounded-br-huge background-transition">
-            <div id="blobbed" class="my-4">
-                <img src="{{ img_url feature_image }}" class="rounded flex shadow max-h-sm" alt="{{ title }}">
-            </div>
-            <div class="max-w-lg mx-auto md:mx-0 flex flex-col justify-center z-20">
+            {{#if feature_image}}
+                <div id="blobbed" class="my-4">
+                    <img src="{{ img_url feature_image }}" class="rounded flex shadow max-h-sm" alt="{{ title }}">
+                </div>
+            {{/if}}
+            <div class="{{#if feature_image}}max-w-lg{{else}}max-w-4xl{{/if}} mx-auto md:mx-0 md:ml-2 lg:ml-0 flex flex-col justify-center z-20">
                 <div class="flex items-center justify-center md:justify-start">
                 {{#primary_tag}}
-                    <a href="{{url}}" title="{{name}}" class="py-1 px-4 shadow no-underline rounded-full font-sans font-semibold text-sm focus:outline-none focus:shadow-outline mr-2 hover:shadow-md dark:border-2 dark:border-sepia-900 border-width-transition">{{name}}</a>
+                    <a href="{{url}}" title="{{name}}" class="py-1 px-4 shadow no-underline rounded-full font-sans font-semibold text-sm focus:outline-none focus:shadow-outline mr-2 hover:bg-gradient hover:text-white dark:border-2 dark:border-sepia-900 border-width-transition">{{name}}</a>
                 {{/primary_tag}}
                 </div>
-                <h1 class="text-5xl font-semibold text-center md:text-left" style="transition: none;">{{ title }}</h1>
+                <h1 class="text-5xl font-semibold text-center md:text-left color-gradient pb-4 md:pb-0" style="transition: none;">{{ title }}</h1>
+                {{#unless feature_image}}
+                <div class="flex flex-col md:flex-row items-center justify-between max-w-2xl lg:max-w-3xl mb-4">
+                {{/unless}}
                 <p class="text-center md:text-left">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank">{{authors separator=" | " autolink="false"}}</a></p>
-                <div class="mt-4 flex items-center justify-center md:justify-start">
+                <div class="mt-4{{#unless feature_image}} md:mt-0{{/unless}} flex items-center justify-center md:justify-start">
                     <svg class="w-5 h-5 mr-1 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.1907692,24 C4.5625628,24 0,19.4374372 0,13.8092308 C0,8.18102433 4.5625628,3.61846154 10.1907692,3.61846154 C15.8189757,3.61846154 20.3815385,8.18102433 20.3815385,13.8092308 C20.3815385,19.4374372 15.8189757,24 10.1907692,24 Z M10.1907692,22 C14.7144062,22 18.3815385,18.3328677 18.3815385,13.8092308 C18.3815385,9.28559383 14.7144062,5.61846154 10.1907692,5.61846154 C5.6671323,5.61846154 2,9.28559383 2,13.8092308 C2,18.3328677 5.6671323,22 10.1907692,22 Z"
@@ -41,10 +36,13 @@
                     </svg>
                     <p class="text-sm">{{ reading_time }}</p>
                 </div>
+                {{#unless feature_image}}
+                </div>
+                {{/unless}}
             </div>
         </header>
     </div>
-    <div class="relative mb-8" style="transition: none;background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));">
+    <div class="relative mb-8 bg-gradient" style="transition: none;">
         <div class="overflow-hidden md:-mt-48 pt-4 md:pt-header z-20 md:mx-8">
             <div class="flex flex-col-reverse md:flex-row items-center justify-between p-2 mb-4 mx-4 md:mx-0">
                 <div style="display:none;" class="flex items-center justify-center text-white text-transition font-semibold" data-blogcast-player>
@@ -57,30 +55,21 @@
                     <p class="text-center md:text-left">Generate audio versions of your articles with <a class="border-b-2 border-white hover:text-sepia-300 hover:border-sepia-300" href="https://blogcast.host/?ref=website" target="_blank">Blogcast</a>.</p>
                 </div>
                 <div class="flex items-center justify-center text-sm text-white text-transition mb-4 md:mb-0">
-                        <h3 class="font-medium">Share this:</h3>
-                        <ul class="ml-4 flex items-center rounded-lg">
-                            <li class="border rounded-l px-1 border-white hover:text-sepia-300">
-                                <a rel="nofollow noopener noreferrer" href="http://twitter.com/share?text={{encode title}}&url={{url absolute='true'}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" target="_blank" title="Click to share on Twitter">
-                                    <span>Twitter</span>
-                                </a>
-                            </li>
-                            <li class="border-t border-b border-r rounded-r px-1 border-white hover:text-sepia-300">
-                                <a rel="nofollow noopener noreferrer" href="#" target="_blank" title="Click to share on Facebook">
-                                    <span>Facebook</span>
-                                </a>
-                            </li>
-                        </ul>
+                        <a class="hover:text-sepia-300 font-semibold" rel="nofollow noopener noreferrer" href="http://twitter.com/share?text={{encode title}}&url={{url absolute='true'}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" target="_blank" title="Click to share on Twitter">Share on Twitter &rarr;</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="max-w-4xl lg:mx-auto mx-6">
-        <article>
-            <div id="article" class="animation animation-fadeInUp animation-delay-4">
-                {{!-- <p class="font-medium text-xl my-4">I'm currently dedicating most of my time to <a class="border-b-2 border-sepia-900 hover:text-blue-500 hover:border-blue-500" href="https://blogcast.host/?ref=website" target="_blank">Blogcast</a>, a service that uses state of the art text-to-speech technology to automate article narration.</p> --}}
-            
-                {{content}}
-            </div>
-        </article>
+    <article id="article" class="max-w-3xl lg:mx-auto mx-6 animation animation-fadeInUp animation-delay-4">
+        {{content}}
+    </article>
+    <div class="mt-10 shadow-md bg-white p-4 border-sepia-300 rounded-lg max-w-3xl lg:mx-auto mx-6 text-center flex items-center justify-between">
+        <p>Got something to add? Continue the conversation on Twitter</p>
+        <a class="twitter-btn" href="https://twitter.com/intent/tweet/?text={{ encode title }}&url={{ url absolute="true" }}&via=m1guelpf" target="_blank" rel="noopener" aria-label="Share on Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+            </svg>
+            <span>Tweet to {{ @site.twitter }}</span>
+        </a>
     </div>
 {{/post}}

@@ -1,53 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{@site.lang}}">
+{{!< base}}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<div class="">
+    <div class="w-full h-2 bg-gradient"></div>
 
-    <title>{{meta_title}}</title>
+    {{{body}}}
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset "css/style.css"}}">
-
-    {{ghost_head}}
-</head>
-
-<body class="preload font-sans bg-sepia-500 text-sepia-900 leading-normal relative {{body_class}}">
-    <div class="">
-        {{{body}}}
-
-        <div class="max-w-4xl lg:mx-auto mx-6">
-            <footer
-                class="max-w-4xl lg:mx-auto text-sepia-300 text-sm mt-12 pb-4 md:pb-12 flex flex-col md:flex-row md:items-center justify-between">
-                <div class="mb-10 md:mb-0">
-                    <a class="text-blue-500 border-b border-blue-500 hover:text-white hover:bg-blue-500 hover:rounded hover:border-0 hover:py-.2 hover:px-1 hover:-mx-1"
-                        href="mailto:soy@miguelpiedrafita.com">soy@miguelpiedrafita.com</a> &mdash; <a
-                        class="text-blue-500 border-b border-blue-500 hover:text-white hover:bg-blue-500 hover:rounded hover:border-0 hover:py-.2 hover:px-1 hover:-mx-1"
-                        href='{{twitter_url @blog.twitter}}'>{{ @blog.twitter }}</a> on Twitter
-                </div>
-                {{{ navigation }}}
-            </footer>
-        </div>
-
+    <div class="max-w-4xl lg:mx-auto mx-6">
+        {{> footer }}
     </div>
-    <div class="fixed bottom-0 right-0 p-4 z-50">
-        <button id="themeToggle" class="border-2 rounded-full p-1 bg-white focus:outline-none focus:shadow-outline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
-    </div>
-    <script src="{{asset "js/index.js"}}"></script>
-    {{!-- <script src="https://scotch.io/js/svg-blobs/lib/svg-blob.min.js"></script> --}}
 
-    {{{block "scripts"}}}
-
-    {{ghost_foot}}
-</body>
-
-</html>
+</div>
+<div class="fixed bottom-0 right-0 p-4 z-40">
+    <button id="themeToggle" class="border-2 rounded-full p-1 bg-white focus:outline-none focus:shadow-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+</div>

@@ -1,0 +1,19 @@
+@variants hover {
+    .bg-gradient {
+        background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+    }
+
+    .border-gradient {
+        border-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114)) 100% ~'1 / 1 / 0'stretch;
+    }
+
+    .color-gradient {
+        background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .color-gradient-none {
+        -webkit-background-clip: inherit;
+        -webkit-text-fill-color: inherit;
+    }
+}

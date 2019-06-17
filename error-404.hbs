@@ -1,0 +1,36 @@
+{{!< base}}
+
+<div class="min-h-screen w-full bg-black text-white">
+    <div class="animate-squiggly flex flex-col items-center justify-center min-h-screen font-mono">
+        <p class="text-3xl">– 404 – <p/>
+        <p class="text-5xl">W H Y</p>
+        <p class="text-4xl max-w-4xl mx-auto text-center">Why do you do this to me, you got my hopes up to serve you a page but as always you request the impossible :(</p>
+        <a class="mt-4 text-2xl hover:text-blue-500" href="{{ @site.url }}">&larr; Go home</a>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="hidden">
+    <defs>
+        <filter id="squiggly-0">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+        <filter id="squiggly-1">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+        </filter>
+
+        <filter id="squiggly-2">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+        <filter id="squiggly-3">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+        </filter>
+
+        <filter id="squiggly-4">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+    </defs>
+</svg>

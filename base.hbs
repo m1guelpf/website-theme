@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{meta_title}}</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset "css/style.css"}}">
+
+    {{ghost_head}}
+</head>
+
+<body class="preload font-sans bg-sepia-500 text-sepia-900 leading-normal relative {{body_class}}">
+
+    {{{body}}}
+    <script src="{{asset "js/index.js"}}"></script>
+    {{!-- <script src="https://scotch.io/js/svg-blobs/lib/svg-blob.min.js"></script> --}}
+
+    {{{block "scripts"}}}
+
+    {{ghost_foot}}
+</body>
+
+</html>

@@ -10,6 +10,7 @@ import { addListener } from 'resize-detector'
                 speedFactor: 1,
                 animateOnHover: true,
                 animateWhenVisible: false,
+                hideOnMobile: false,
                 round: true,
                 resize: true,
                 resizeTimeout: 100,
@@ -66,7 +67,7 @@ import { addListener } from 'resize-detector'
                 svg.setAttribute('class', 'svg-blob__svg --debug')
                 svg.appendChild(path)
             } else {
-                svg.setAttribute('class', 'absolute left-0 top-0 w-full h-full')
+                svg.setAttribute('class', `absolute left-0 top-0 w-full h-full pointer-events-none ${this.options.hideOnMobile ? 'hidden md:block':''}`)
                 var defs = document.createElementNS(_svgNS, 'defs')
                 svg.appendChild(defs)
                 var clipPath = document.createElementNS(_svgNS, 'clipPath')

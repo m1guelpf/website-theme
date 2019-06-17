@@ -1,18 +1,10 @@
 {{!< default}}
 
 <div class="pt-6 max-w-4xl lg:mx-auto mx-6">
-  <header class="flex items-center justify-between pb-6">
-    <div class="flex-1 text-blue-500 uppercase text-sm font-medium tracking-px text-center md:text-left">
-        <h1>Miguel Piedrafita &mdash; 17-&#65279;year-&#65279;old&nbsp;<span
-                class="inline md:hidden">indie&nbsp;</span>maker</h1>
-    </div>
-    <div class="hidden md:block">
-        {{{ navigation }}}
-    </div>
-  </header>
+  {{> header }}
   <div class="mt-16 animation animation-fadeInUp animation-delay-2">
     <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">My articles</h3>
-    <p class="mt-4" id="article">Here's a list of all the articles I've ever written. The ones I'm most proud of have a star next to their title, maybe you would like to <a class="cursor-pointer" data-toggle-featured>see only featured articles</a>? Or, if you're feeling overwhelmed, how about a <a class="cursor-pointer" data-toggle-simplified-view>simplified view</a>?</p>
+    <p class="mt-4" id="article">Here's a list of all the articles I've ever written. The ones I'm most proud of have a star next to their title, so maybe you'd to <a class="cursor-pointer" data-toggle-featured>see only those</a>? Or, if you're feeling too overwhelmed, how about a <a class="cursor-pointer" data-toggle-simplified-view>simplified view</a>?</p>
   </div>
   <div id="article" class="mt-12 animation animation-fadeInUp animation-delay-4">
     {{#foreach posts}}

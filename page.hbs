@@ -1,0 +1,13 @@
+{{!< default}}
+
+<div class="pt-6 max-w-4xl lg:mx-auto mx-6">
+  {{> header }}
+  {{#post}}
+    <div class="mt-16 animation animation-fadeInUp animation-delay-2">
+      <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">{{ title }}</h3>
+    </div>
+    <div id="article" class="mt-12 animation animation-fadeInUp animation-delay-4">
+      {{ content }}
+    </div>
+  {{/post}}
+</div>

@@ -1,3 +1,5 @@
+import mediumZoom from 'medium-zoom'
+
 var images = document.querySelectorAll('.kg-gallery-image img');
 
 images.forEach(image => {
@@ -9,3 +11,12 @@ images.forEach(image => {
 
     container.style.flex = ratio + ' 1 0%';
 })
+
+if (document.querySelector('.post-template')) {
+    window.addEventListener('load', function () {
+        mediumZoom('article img:not(.no-zoomable)', {
+            margin: 24,
+            background: 'var(--sepia-500)'
+        });
+    }, false);
+}

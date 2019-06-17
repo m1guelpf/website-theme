@@ -1,17 +1,13 @@
-/* PrismJS 1.14.0
-https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+markup-templating+graphql+json+markdown+php+php-extras+yaml&plugins=autolinker */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-    @apply .border-0 .text-black .bg-none .font-mono .text-left .whitespace-pre .break-normal .leading-normal;
-    text-shadow: 0 1px var(--white);
-    transition: text-shadow 1s ease-in, color 1s ease-in;
+code[class*='language-'],
+pre[class*='language-'] {
+    color: #ffffff;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
     word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
 
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -23,189 +19,113 @@ pre[class*="language-"] {
     hyphens: none;
 }
 
-code[class*="language-"] a {
-    box-shadow: none;
-    border: 0;
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+    color: inherit;
+    background: #A599E9;
 }
 
-code[class*="language-"] a:hover {
-    text-decoration: underline;
-    color: inherit !important;
-}
-
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #b3d4fc;
-}
-
-@media print {
-
-    code[class*="language-"],
-    pre[class*="language-"] {
-        text-shadow: none;
-    }
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+    color: inherit;
+    background: #A599E9;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
-    /* padding: 1em; */
-    /* margin: 10px 0 10px; */
+pre[class*='language-'] {
+    padding: 2em;
+    margin: 0.5em 0;
     overflow: auto;
 }
 
-pre::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 5px;
-}
-
-pre::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, .1);
-    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .1);
-}
-
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
-    background: rgba(238, 238, 238, 0.35);
-    border-radius: 3px;
-    padding: 10px 10px 2px;
-    @apply .shadow-md;
+:not(pre)>code[class*='language-'],
+pre[class*='language-'] {
+    background: #1E1E3F;
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
-    background: #f0f2f1;
-    border-radius: .3em;
-    color: #f4645f;
-    white-space: normal;
-    padding: 1px 5px;
-    border-radius: 3px;
+:not(pre)>code[class*='language-'] {
+    padding: 0.1em;
+    border-radius: 0.3em;
 }
 
 .token.comment,
 .token.prolog,
-.token.doctype,
 .token.cdata {
-    transition: color 1s ease-in;
-    color: #999;
+    color: #B362FF;
 }
 
-.token.punctuation {
-    transition: color 1s ease-in;
-    color: #999;
-}
-
-.namespace {
-    opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-    transition: color 1s ease-in;
-    color: #DA564A;
-}
-
-.token.scope,
-.token.attr-name {
-    transition: color 1s ease-in;
-    color: #DA564A;
-}
-
+.token.delimiter,
+.token.keyword,
 .token.selector,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-    transition: color 1s ease-in;
-    color: #2E7D32;
+.token.important,
+.token.atrule {
+    color: #FF9D00;
 }
 
 .token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-    transition: color 1s ease-in;
-    color: #555;
+.token.attr-name {
+    color: rgb(255, 180, 84);
 }
 
-.token.atrule,
+.token.punctuation {
+    color: #FFFFFF;
+}
+
+.token.boolean {
+    color: rgb(255, 98, 140);
+}
+
+.token.tag,
+.token.tag .punctuation,
+.token.doctype,
+.token.builtin {
+    color: rgb(255, 157, 0);
+}
+
+.token.entity,
+.token.number,
+.token.symbol {
+    color: #6897bb;
+}
+
+.token.property,
+.token.constant,
+.token.variable {
+    color: #FF628C;
+}
+
+.token.string,
+.token.char {
+    color: #A5FF90;
+}
+
 .token.attr-value,
-.token.keyword {
-    transition: color 1s ease-in;
-    color: #07a;
+.token.attr-value .punctuation {
+    color: #a5c261;
+}
+
+.token.attr-value .punctuation:first-child {
+    color: #a9b7c6;
+}
+
+.token.url {
+    color: #287bde;
+    text-decoration: underline;
 }
 
 .token.function {
-    transition: color 1s ease-in;
-    color: #555;
+    color: rgb(250, 208, 0);
 }
 
-.token.regex,
-.token.important,
-.token.variable {
-    transition: color 1s ease-in;
-    color: #4EA1DF;
+.token.regex {
+    background: #364135;
 }
 
-body[data-dark] {
-    .token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string {
-        color: #c9c5be;
-    }
-
-    .token.property,
-    .token.tag,
-    .token.boolean,
-    .token.number,
-    .token.constant,
-    .token.symbol,
-    .token.deleted {
-        color: #df6e64;
-    }
-
-    .token.scope,
-    .token.attr-name {
-        color: #df6e64;
-    }
-
-    .token.selector,
-    .token.string,
-    .token.char,
-    .token.builtin,
-    .token.inserted {
-        color: #9cdb9f;
-    }
-
-    .token.function {
-        color: #c9c5be;
-    }
-
-    .token.regex,
-    .token.important,
-    .token.variable {
-        color: #5fabe2;
-    }
-
-    .token.atrule,
-    .token.attr-value,
-    .token.keyword {
-        color: #66d1ff;
-    }
-}
-
-.token.important,
 .token.bold {
     font-weight: bold;
 }
@@ -214,10 +134,34 @@ body[data-dark] {
     font-style: italic;
 }
 
-.token.entity {
-    cursor: help;
+.token.inserted {
+    background: #00FF00;
 }
 
-.token a {
-    color: inherit;
+.token.deleted {
+    background: #FF000D;
+}
+
+/*code.language-css .token.punctuation {
+   color: #cc7832;
+ }*/
+
+code.language-css .token.property,
+code.language-css .token.property+.token.punctuation {
+    color: #a9b7c6;
+}
+
+code.language-css .token.id {
+    color: #ffc66d;
+}
+
+code.language-css .token.selector>.token.class,
+code.language-css .token.selector>.token.attribute,
+code.language-css .token.selector>.token.pseudo-class,
+code.language-css .token.selector>.token.pseudo-element {
+    color: #ffc66d;
+}
+
+.token.class-name {
+    color: #FB94FF;
 }
