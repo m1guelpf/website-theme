@@ -15,7 +15,26 @@
   },
   "config": {
     "posts_per_page": 9999,
-    "image_sizes": {}
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
   },
   "scripts": {
     "dev": "npm run development",
@@ -44,6 +63,7 @@
     "@tailwindcss/custom-forms": "^0.1.4",
     "axios": "^0.19.0",
     "codemirror": "^5.47.0",
+    "lazysizes": "^5.1.0",
     "medium-zoom": "^1.0.4",
     "resize-detector": "^0.2.0"
   }
