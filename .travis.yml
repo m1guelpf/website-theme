@@ -1,0 +1,22 @@
+branches:
+  only:
+  - "/^v?\\d{1,3}\\.\\d{1,3}(?:\\.\\d{1,3})?(?:\\.\\d{1,3})?$/"
+cache:
+  yarn: true
+language: node_js
+node_js: 
+  - '8'
+script:
+- yarn prod
+- yarn test
+deploy:
+  provider: releases
+  api_key:
+    secure: ZrGnaW4rgbsHF5QhTAnpZLh9C1PElK2ePZUk5b4tm6os2x6ukZeOb1AkEKmhw5stnBGQ7bAThFBi2T4liQz7OuQhiRZga9JOw9AYVKP6zBD1y5/ul7W4MSW0DpLLj9qnjmaVAIUMESG8mZJr9hRjziuGWMEfGQXaW3Se+CccP8P5K5r9J6oRx4iQj8IrmugYts91jociK5dweGKxnDHx1kU6MlX6tdSlmq8ObYgRqeK6PUDYqjUOD4TaXGEaNQgv1vuR7N9nuTp/A/CgTfw9l7voGQPyhS6rdf65gaQSWKwDIITjbb+1gDMazuhafPtVTPuk9xyKYe0kj8mv2yqBw4yEYepOiKuafaLAFKyoMmjFEO1LPfvEGKf9DPTkiT3bUAOiwo315/AKnTe2own5itahAfotxjEbyfIpWNTYBpD+6TDqLGWy6Zt05Zn/Dtdvqj8ZeXR1gDO9w7gTklPwcKuOSAWcq3XsYIVwkLy+uxSvdwSDVnZ6L6b1w4qiUvX8t2Q5u6AIDL8a/5LjnLExrf5s5OK8pzQlsJl8JhjSt475AcgcyMssAkRl6/w0K7Oap9Uzt/3Vp8EDBIvHzEJSlt0JtHs5tH8QgBVLDYSUctRKErs2T21S2bAWPu1y0Xgsx2BSWhpdfWPky4XjQxXxtwrDcRuISgzWl5RM6UFypeU=
+  file_glob: true
+  file: dist/theme.zip
+  on:
+    repo: m1guelpf/website-theme
+    branch: master
+    tags: true
+  skip_cleanup: true
