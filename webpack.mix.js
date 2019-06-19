@@ -1,5 +1,4 @@
 let mix = require('laravel-mix');
-const WebpackZipBuild = require('webpack-zip-build');
 
 require('mix-tailwindcss');
 
