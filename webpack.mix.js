@@ -1,4 +1,6 @@
 let mix = require('laravel-mix');
+const WebpackZipBuild = require('webpack-zip-build');
+
 require('mix-tailwindcss');
 
 Mix.manifest.refresh = _ => void 0
@@ -32,3 +34,15 @@ mix
     })
     .js('src/js/index.js', 'assets/js')
     .setPublicPath('assets/');
+
+if (mix.inProduction()) {
+    mix.webpackConfig({
+        plugins: [
+            new WebpackZipBuild({
+                entries: ['./assets/*', './*.hbs', './package.json', './partials/*'],
+                output: path.join(__dirname, './dist/theme'),
+                format: 'zip',
+            }),
+        ]
+    });
+}

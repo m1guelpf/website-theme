@@ -35,7 +35,8 @@
     "less-loader": "^5.0.0",
     "mix-tailwindcss": "^1.1.0",
     "tailwindcss": "^1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-zip-build": "^1.0.3"
   },
   "dependencies": {
     "@tailwindcss/custom-forms": "^0.1.4",
