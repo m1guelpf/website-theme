@@ -12,7 +12,7 @@
                 </div>
             {{/if}}
             <div class="{{#if feature_image}}max-w-lg{{else}}max-w-4xl{{/if}} mx-auto md:mx-0 md:ml-2 lg:ml-0 flex flex-col justify-center z-20">
-                <div class="flex items-center justify-center md:justify-start">
+                <div class="hidden md:flex items-center justify-start">
                 {{#primary_tag}}
                     <a href="{{url}}" title="{{name}}" class="py-1 px-4 shadow no-underline rounded-full font-sans font-semibold text-sm focus:outline-none focus:shadow-outline mr-2 hover:bg-gradient hover:text-white dark:border-2 dark:border-sepia-900 border-width-transition">{{name}}</a>
                 {{/primary_tag}}
@@ -21,8 +21,8 @@
                 {{#unless feature_image}}
                 <div class="flex flex-col md:flex-row items-center justify-between max-w-2xl lg:max-w-3xl mb-4">
                 {{/unless}}
-                <p class="text-center md:text-left">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank">{{authors separator=" | " autolink="false"}}</a></p>
-                <div class="mt-4{{#unless feature_image}} md:mt-0{{/unless}} flex items-center justify-center md:justify-start">
+                <p class="hidden md:block text-center md:text-left">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank">{{authors separator=" | " autolink="false"}}</a></p>
+                <div class="md:mt-4{{#unless feature_image}} md:mt-0{{/unless}} flex items-center justify-center md:justify-start">
                     <svg class="w-5 h-5 mr-1 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.1907692,24 C4.5625628,24 0,19.4374372 0,13.8092308 C0,8.18102433 4.5625628,3.61846154 10.1907692,3.61846154 C15.8189757,3.61846154 20.3815385,8.18102433 20.3815385,13.8092308 C20.3815385,19.4374372 15.8189757,24 10.1907692,24 Z M10.1907692,22 C14.7144062,22 18.3815385,18.3328677 18.3815385,13.8092308 C18.3815385,9.28559383 14.7144062,5.61846154 10.1907692,5.61846154 C5.6671323,5.61846154 2,9.28559383 2,13.8092308 C2,18.3328677 5.6671323,22 10.1907692,22 Z"
