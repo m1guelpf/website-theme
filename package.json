@@ -19,6 +19,7 @@
   },
   "scripts": {
     "dev": "npm run development",
+    "test": "gscan .",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "npm run development -- --watch",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -30,6 +31,7 @@
     "autoprefixer": "^9.5.1",
     "cross-env": "^5.2.0",
     "cssnano": "^4.1.10",
+    "gscan": "^2.6.1",
     "laravel-mix": "^4.0.16",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
