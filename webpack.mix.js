@@ -40,7 +40,7 @@ if (mix.inProduction()) {
         plugins: [
             new WebpackZipBuild({
                 entries: ['./assets/*', './*.hbs', './package.json', './partials/*'],
-                output: path.join(__dirname, './dist/theme'),
+                output: path.join(__dirname, './dist/mp-theme'),
                 format: 'zip',
             }),
         ]
