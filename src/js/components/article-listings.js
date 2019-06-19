@@ -25,20 +25,19 @@ if (toggleSimplified && articleElements) {
         return {
             root: article,
             excerpt: article.querySelector('[data-post-excerpt]'),
-            meta: article.querySelector('[data-post-meta]'),
         }
     })
 
     toggleSimplified.addEventListener('click', () => {
-        const shouldDisable = articles[0].meta.style.display == 'none'
+        const shouldDisable = articles[0].excerpt.style.display == 'none'
 
         if (shouldDisable) {
             articles.forEach(article => {
-                article.excerpt.style.display = article.meta .style.display = null
+                article.excerpt.style.display = null
             })
         } else {
             articles.forEach(article => {
-                article.excerpt.style.display = article.meta .style.display = 'none'
+                article.excerpt.style.display = 'none'
             })
         }
     })
