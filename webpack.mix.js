@@ -34,15 +34,3 @@ mix
     })
     .js('src/js/index.js', 'assets/js')
     .setPublicPath('assets/');
-
-if (mix.inProduction()) {
-    mix.webpackConfig({
-        plugins: [
-            new WebpackZipBuild({
-                entries: ['./assets/*', './*.hbs', './package.json', './partials/*'],
-                output: path.join(__dirname, './dist/mp-theme'),
-                format: 'zip',
-            }),
-        ]
-    });
-}

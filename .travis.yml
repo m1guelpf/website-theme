@@ -8,6 +8,7 @@ node_js:
   - '8'
 script:
 - yarn prod
+- yarn zip
 deploy:
   provider: releases
   api_key:
