@@ -1,0 +1,13 @@
+{{!< default}}
+
+{{> header }}
+
+{{#post}}
+<header class="mt-8 text-center">
+    <h1 class="text-4xl">{{ title }}</h1>
+    <p class="text-sepia-300">{{ date format="DD/MM/YY" }}</p>
+</header>
+<article id="article" class="max-w-2xl mx-auto animation animation-fadeInUp animation-delay-4">
+    {{content}}
+</article>
+{{/post}}

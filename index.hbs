@@ -3,8 +3,12 @@
 <div class="pt-6 max-w-4xl lg:mx-auto mx-6">
   {{> header }}
   <div class="mt-16 animation animation-fadeInUp animation-delay-2">
-    <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">My articles</h3>
-    <p class="mt-4" id="article">Here's a list of all the articles I've ever written. The ones I'm most proud of have a star next to their title, so maybe you'd to <a class="cursor-pointer" data-toggle-featured>see only those</a>?</p>
+    {{#is "page"}}
+      <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">My articles</h3>
+      <p class="mt-4" id="article">Here's a list of all the articles I've ever written. The ones I'm most proud of have a star next to their title, so maybe you'd to <a class="cursor-pointer" data-toggle-featured>see only those</a>?</p>
+    {{else}}
+      <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">Ficción</h3>
+    {{/is}}
   </div>
   <div class="mt-12 animation animation-fadeInUp animation-delay-4">
     {{#foreach posts}}
@@ -20,9 +24,6 @@
                 {{/if}}
               </h2>
           </header>
-          <section class="opacity-transition height-transition" data-post-excerpt>
-              <p>{{excerpt}}</p>
-          </section>
       </article>
     {{/foreach}}
   </div>
