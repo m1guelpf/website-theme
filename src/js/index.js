@@ -1,3 +1,4 @@
+import 'instant.page';
 import './lib/prism';
 
 import './components/darkMode';

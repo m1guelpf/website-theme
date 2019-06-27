@@ -3614,6 +3614,11 @@ ini@^1.3.0, ini@^1.3.4, ini@~1.3.0:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
 
+instant.page@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/instant.page/-/instant.page-1.2.2.tgz#8907ada802f6cd114ba74c5131c409e42a5938ed"
+  integrity sha512-Vy1k/9R+1el6qgX4+j0z7G055etgYZp71MEbyFp22ydYGbDV+9xLJ27NJ/u6QPKkK/cJkmJn1LfLnqlQQLK0VQ==
+
 internal-ip@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-4.3.0.tgz#845452baad9d2ca3b69c635a137acb9a0dad0907"
