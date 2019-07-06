@@ -48,7 +48,10 @@ module.exports = {
       },
       maxWidth: {
         'screen': '100vw'
-      }
+      },
+      width: theme => {
+        return theme('maxWidth')
+      },
     },
   },
   variants: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus', 'active', 'dark',],
