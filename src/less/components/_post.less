@@ -49,6 +49,32 @@
         @apply .font-bold;
     }
 
+    .footnote-ref {
+        @apply .ml-1;
+
+        a {
+            @apply .border-0 .text-sm;
+        }
+    }
+
+    hr.footnotes-sep {
+        @apply .border-b-2 .border-sepia-900 .my-8 .mx-10;
+    }
+
+    section.footnotes ol {
+        @apply .text-base .mx-10;
+
+        li {
+            p {
+                @apply .text-base;
+            }
+
+            a.footnote-backref {
+                @apply .font-sans-no-emoji .border-0;
+            }
+        }
+    }
+
     table {
         @apply .w-full .font-mono .text-xs;
         border-collapse: separate;
