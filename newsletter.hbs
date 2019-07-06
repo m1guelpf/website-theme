@@ -6,21 +6,27 @@
         <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">Join my newsletter</h3>
     </div>
     <div id="article" class="mt-12 animation animation-fadeInUp animation-delay-4">
-        <p><span class="highlight">I'll email you every saturday if I've published any new articles.</span> Right now the email is automated, but I plan to start writing them manually at some point, including updates on what I've been working on.</p>
-    </div>
-
-    <div class="max-w-2xl mx-auto w-full text-xl">
+        <p>I send an email every saturday with <span class="highlight">project updates, article drafts &amp; general thoughts.</span> I'll never spam you or share your information with anyone.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+    <div class="max-w-3xl mx-auto w-full text-xl shadow rounded-full">
         <form class="flex items-center items-stretch justify-center" method="POST" data-newsletter-form>
-            <input type="email"
-                class="flex-1 rounded-l-full p-4 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100"
-                placeholder="panic@thedis.co" required data-email-field>
-            <button
-                class="rounded-r-full bg-gradient text-white py-4 px-6 font-semibold focus:outline-none focus:shadow-outline"
-                style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
+            <input type="email" class="flex-1 rounded-l-full px-4 py-2 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100" placeholder="panic@thedis.co" required data-email-field>
+            <button class="rounded-r-full bg-gradient text-white py-2 px-4 font-semibold focus:outline-none focus:shadow-outline" style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
         </form>
         <div class="text-center bg-gradient text-white rounded-full font-semibold py-4 px-6" style="display:none;"
             data-newsletter-success>
             <p style="transition: color 1s ease-in;">You've been successfully subscribed!</p>
         </div>
     </div>
+
+    <hr class="border-b-2 border-sepia-900 my-8">
+
+    <section class="footnotes">
+        <ol class="footnotes-list" style="margin-left:0;margin-right:0;">
+            <li id="fn1" class="footnote-item">
+                <p>Ideally everyone should, but sadly this isn't always the case. I believe privacy is a fundamental human right and the lack of it is one of the worst problems in today's society, and I promise you I'd never sell or trade your information. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+            </li>
+        </ol>
+    </section>
+    </div>
+
 </div>
