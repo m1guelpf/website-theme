@@ -25,10 +25,10 @@ if (newsletterForm && emailField && newsletterSuccess) {
                     localStorage.setItem('subscribedToNewsletter', true);
                 } catch (err) {}
             } else {
-                alert('something went wrong. Please try again or DM me on Twitter :)')
+                alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
             }
         }).catch(() => {
-            alert('something went wrong. Please try again or DM me on Twitter :)')
+            alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
         })
     })
 }
