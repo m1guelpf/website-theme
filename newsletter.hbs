@@ -9,11 +9,18 @@
         <p><span class="highlight">I'll email you every saturday if I've published any new articles.</span> Right now the email is automated, but I plan to start writing them manually at some point, including updates on what I've been working on.</p>
     </div>
 
-    <form class="flex items-center items-stretch justify-center text-xl w-full max-w-2xl mx-auto" id="newsletterForm" method="POST">
-        <input type="email" id="email" class="flex-1 rounded-l-full p-4 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100" placeholder="panic@thedis.co" required>
-        <button class="rounded-r-full bg-gradient text-white py-4 px-6 font-semibold focus:outline-none focus:shadow-outline" style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
-    </form>
-    <form class="text-center text-xl w-full max-w-2xl mx-auto bg-gradient text-white rounded-full font-semibold py-4 px-6" id="newsletterSuccess" style="display:none;">
-        <p style="transition: color 1s ease-in;">You've been successfully subscribed!</p>
-    </form>
+    <div class="max-w-2xl mx-auto w-full text-xl">
+        <form class="flex items-center items-stretch justify-center" method="POST" data-newsletter-form>
+            <input type="email"
+                class="flex-1 rounded-l-full p-4 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100"
+                placeholder="panic@thedis.co" required data-email-field>
+            <button
+                class="rounded-r-full bg-gradient text-white py-4 px-6 font-semibold focus:outline-none focus:shadow-outline"
+                style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
+        </form>
+        <div class="text-center bg-gradient text-white rounded-full font-semibold py-4 px-6" style="display:none;"
+            data-newsletter-success>
+            <p style="transition: color 1s ease-in;">You've been successfully subscribed!</p>
+        </div>
+    </div>
 </div>

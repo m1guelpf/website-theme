@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const newsletterForm = document.getElementById('newsletterForm')
-const newsletterSuccess = document.getElementById('newsletterSuccess')
-const emailField = document.getElementById('email')
+const newsletterForm = document.querySelector('[data-newsletter-form]')
+const newsletterSuccess = document.querySelector('[data-newsletter-success]')
+const emailField = document.querySelector('[data-email-field]')
 
 if (newsletterForm && emailField && newsletterSuccess) {
 
