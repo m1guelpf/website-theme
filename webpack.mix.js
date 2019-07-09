@@ -31,5 +31,14 @@ mix
                 []
         ]
     })
+    .babelConfig({
+        plugins: ['@babel/plugin-syntax-dynamic-import'],
+    })
+    .webpackConfig({
+        output: {
+            publicPath: '/assets/',
+            chunkFilename: 'js/[name].js?[chunkhash]',
+        },
+    })
     .js('src/js/index.js', 'assets/js')
     .setPublicPath('assets/');
