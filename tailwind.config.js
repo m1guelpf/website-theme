@@ -43,6 +43,9 @@ module.exports = {
       borderRadius: {
         'huge': '200px'
       },
+      minHeight: {
+        'auto': 'auto',
+      },
       maxHeight: {
         'sm': '16rem'
       },
