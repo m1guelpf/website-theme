@@ -7,6 +7,7 @@ import './components/koeing-gallery';
 import './components/blogcast-whitelabel';
 import './components/article-listings';
 import './components/newsletter';
+import './components/comment-count';
 
 Array.from(document.getElementsByTagName('a')).forEach(link => {
     link.addEventListener('transitionrun', () => {
