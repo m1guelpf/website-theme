@@ -1,0 +1,226 @@
+.commento:not(.comento-root) {
+    @apply .opacity-0;
+}
+
+.commento-root {
+    @apply mt-10 max-w-3xl mx-auto bg-white shadow px-4 pt-4 rounded-lg !important;
+    transition: background-color 1s ease-in;
+
+    * {
+        transition: color 1s ease-in;
+    }
+
+    &.commento-root-min-height {
+        @apply .min-h-auto !important;
+    }
+
+    .commento-login-box {
+        @apply .rounded-lg .bg-white .shadow-lg .w-full !important;
+        transition: background-color 1s ease-in !important;
+
+        .commento-oauth-buttons {
+            .commento-button {
+                @apply .text-white .shadow !important;
+            }
+            .commento-github-button {
+                @apply .bg-black !important;
+                transition: background-color 1s ease-in, color 1s ease-in;
+            }
+        }
+
+        .commento-login-box-hr {
+            @apply .bg-sepia-100 !important;
+        }
+
+        .commento-login-box-subtitle {
+            @apply .text-sepia-900 !important;
+        }
+
+        .commento-login-link {
+            @apply .border-b-2 .border-blue-500 .border-solid .text-blue-500 .font-semibold !important;
+            transition: color 1s ease-in, border-color 1s ease-in;
+
+            &:hover {
+                @apply .border-gradient .text-gradient;
+            }
+        }
+
+        .commento-email {
+            @apply .bg-white .rounded-lg .shadow-md .overflow-hidden .flex .items-center .items-stretch .justify-between !important;
+            transition: background-color 1s ease-in;
+
+            .commento-input {
+                @apply .h-full .flex-1 .rounded-none !important;
+            }
+
+            .commento-email-button {
+                @apply .text-blue-500 !important;
+
+                &:hover {
+                    @apply .bg-gradient .text-white !important;
+                }
+            }
+        }
+    }
+
+    .commento-login {
+        @apply .flex .items-center .justify-between .w-auto .mb-4 !important;
+
+        &:before {
+            content: "Comments";
+    
+            @apply .text-left .text-xl .font-medium .text-sepia-900;
+        }
+
+    }
+    .commento-login .commento-login-text,
+    .commento-logged-container .commento-logout {
+        @apply .mr-0 .h-auto .text-sepia-900 .font-bold !important;
+
+        &:hover {
+            @apply .text-gradient;
+        }
+    }
+
+    .commento-error-box {
+        @apply .bg-red-500 .text-white .h-auto .py-2 .mb-4 !important;
+    }
+
+    .commento-logged-container {
+        @apply .static .h-auto .flex .items-center .justify-between !important;
+
+        .commento-logged-in-as {
+            @apply .static .flex .items-center !important;
+            .commento-name {
+                @apply .static .text-sepia-900 !important;
+            }
+        }
+
+        .commento-logout {
+            @apply .static .w-full .text-right !important;
+        }
+    }
+
+    .commento-mod-tools {
+        &:before {
+            @apply .text-blue-500 !important;
+            transition: color 1s ease-in;
+        }
+
+        #commento-mod-tools-lock-button {
+            @apply .text-sepia-300 !important;
+        }
+    }
+
+    .commento-round-check {
+        input:checked+label:before {
+            @apply .bg-blue-500 .border-blue-500 !important;
+            transition: background-color 1s ease-in, border-color 1s ease-in;
+        }
+
+        label {
+            @apply .text-sepia-300 !important;
+        }
+    }
+
+
+    .commento-textarea-container textarea {
+        @apply .bg-sepia-500 .rounded-lg !important;
+        transition: background-color 1s ease-in;
+
+        &:focus {
+            @apply .shadow-outline;
+        }
+    }
+
+    .commento-markdown-help,
+    .commento-body {
+        @apply .mb-4 !important;
+
+        * {
+            @apply .text-sepia-900 !important;
+            transition: color 1s ease-in;
+        }
+
+        tr {
+            @apply .pl-2 !important;
+        }
+
+        a {
+            @apply .border-b-2 .border-sepia-900 .text-sepia-900 !important;
+            transition: color 1s ease-in, border-color 1s ease-in;
+
+            &:hover {
+                @apply .text-gradient .border-gradient !important;
+            }
+        }
+
+        blockquote {
+            @apply .italic .border-l-4 .pl-2 .m-0 !important;
+        }
+    }
+
+    .commento-submit-button {
+        @apply .text-white .bg-blue-500 .border-0 .rounded-lg !important;
+        transition: background-color 1s ease-in, color 1s ease-in;
+
+        &:hover {
+            @apply .bg-gradient !important;
+        }
+    }
+
+    .commento-markdown-button {
+        @apply .text-sepia-900 .m-0 !important;
+        font-size: 0 !important;
+
+        &:before {
+            @apply .font-bold .mr-1;
+            font-size: initial !important;
+            content: "M↓";
+        }
+
+        &:after {
+            @apply .text-sm .normal-case !important;
+            content: "Markdown";
+        }
+
+        b {
+            @apply .hidden !important;
+        }
+    }
+
+    .commento-markdown-help {
+        @apply .w-full .border-sepia-300 !important;
+    }
+
+    .commento-card {
+        @apply .border-t-0 .pt-0 !important;
+
+        .commento-option- {
+            &collapse {
+                @apply .hidden !important;
+            }
+
+            &remove {
+                @apply .bg-red-500 !important;
+            }
+
+            &unsticky {
+                @apply .bg-orange-400 !important;
+            }
+        }
+
+        .commento-name {
+            @apply .text-sepia-900 !important;
+        }
+
+        .commento-score,
+        .commento-timeago {
+            @apply .text-sepia-300 !important;
+        }
+    }
+
+    .commento-footer {
+        @apply hidden;
+    }
+}
