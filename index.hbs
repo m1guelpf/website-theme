@@ -14,7 +14,7 @@
     {{#foreach posts}}
       <article class="{{post_class}} opacity-transition height-transition" data-article-listing {{#if featured}}data-featured{{else}}data-not-featured{{/if}}>
           <header class="post-header">
-              <span class="text-sepia-300 uppercase font-semibold text-xs tracking-wide mb-1">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }}</span>
+              <span class="text-sepia-300 uppercase font-semibold text-xs tracking-wide mb-1">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }} <span data-comment-count data-comments-for="{{ url }}"></span></span>
               <h2 class="flex items-center font-normal">
                 <a href="{{url}}">{{title}}</a>
                 {{#if featured}}
