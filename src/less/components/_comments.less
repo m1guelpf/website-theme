@@ -1,9 +1,5 @@
-.commento:not(.comento-root) {
-    @apply .opacity-0;
-}
-
 .commento-root {
-    @apply mt-10 max-w-3xl mx-auto bg-white shadow px-4 pt-4 rounded-lg !important;
+    @apply mt-10 max-w-3xl mx-auto bg-white shadow px-4 pt-4 rounded-lg overflow-x-auto !important;
     transition: background-color 1s ease-in;
 
     * {
@@ -11,7 +7,17 @@
     }
 
     &.commento-root-min-height {
-        @apply .min-h-auto !important;
+        min-height: 335px !important;
+    }
+
+    .commento-blurred {
+            filter: blur(3px);
+            pointer-events: none;
+            @apply .opacity-100 .pointer-events-none !important;
+    }
+
+    .commento-main-area {
+        transition: none !important;
     }
 
     .commento-login-box {
