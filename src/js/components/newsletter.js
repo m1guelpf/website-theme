@@ -15,8 +15,10 @@ if (newsletterForm && emailField && newsletterSuccess) {
         e.preventDefault()
 
         import('axios').then(axios => {
-            axios.post('https://app.mailerlite.com/webforms/submit/d4j8l4?ml-submit=1&ajax=1&guid=baa9f0fc-f6ab-3081-475a-3dca456bfbdf&fields[email]=' + emailField.value).then(response => {
-                if (response.data.success) {
+            axios.post('https://newsletter.m1guelpf.me/subscribe-ajax.php', {
+                email: emailField.value,
+            }).then(response => {
+                if (response.data == 1) {
                     newsletterForm.style.display = 'none'
                     newsletterSuccess.style.display = null
     
