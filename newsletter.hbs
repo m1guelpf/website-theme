@@ -8,13 +8,12 @@
     <div id="article" class="mt-12 animation animation-fadeInUp animation-delay-4">
         <p>I send an email every saturday with <span class="highlight">project updates, article drafts &amp; general thoughts.</span> I'll never spam you or share your information with anyone.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
     <div class="max-w-3xl mx-auto w-full text-xl shadow rounded-full">
-        <form class="flex items-center items-stretch justify-center" method="POST" data-newsletter-form>
-            <input type="email" class="flex-1 rounded-l-full px-4 py-2 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100" placeholder="panic@thedis.co" required data-email-field>
-            <button class="rounded-r-full bg-gradient text-white py-2 px-4 font-semibold focus:outline-none focus:shadow-outline" style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
+        <form class="flex flex-col md:flex-row items-center items-stretch justify-center" method="POST" data-newsletter-form>
+            <input type="email" class="flex-1 rounded-full md:rounded-r-none px-4 py-2 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100 mb-4 md:mb-0" placeholder="panic@thedis.co" required data-email-field>
+            <button class="rounded-full md:rounded-l-none bg-gradient text-white py-2 px-4 font-semibold focus:outline-none focus:shadow-outline" style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
         </form>
-        <div class="text-center bg-gradient text-white rounded-full font-semibold py-4 px-6" style="display:none;"
-            data-newsletter-success>
-            <p style="transition: color 1s ease-in;">You've been successfully subscribed!</p>
+        <div class="text-center bg-gradient text-white rounded-lg md:rounded-full font-semibold py-1 md:py-4 px-4 md:px-6" style="display:none;" data-newsletter-success>
+            <p style="margin:0;text-align:center;" style="transition: color 1s ease-in;">You've been successfully subscribed!</p>
         </div>
     </div>
 
