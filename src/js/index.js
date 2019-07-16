@@ -5,6 +5,7 @@ import './components/darkMode';
 import './components/feature-image';
 import './components/koeing-gallery';
 import './components/blogcast-whitelabel';
+import './components/external-links';
 import './components/article-listings';
 import './components/newsletter';
 import './components/comment-count';
