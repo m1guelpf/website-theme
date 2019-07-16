@@ -11,17 +11,16 @@ import './../lib/svgBlob'
     setTimeout(() => {
         Array.from(document.querySelectorAll("article pre[class*='language-']")).forEach(el => {
             const codeEl = el.querySelector('code')
+
             if (codeEl.innerHTML.indexOf("\n") === codeEl.innerHTML.length - 1) {
                 return;
             }
-            const wrapper = document.createElement('div')
-            wrapper.classList.add('code-blob')
-            el.parentElement.insertBefore(wrapper, el)
-            wrapper.appendChild(el)
+
+            el.classList.add('code-blob')
         })
         new SvgBlob(".code-blob", {
             speedFactor: .5,
-            animateOnHover: true,
+            animateOnHover: false,
             animateWhenVisible: false,
             hideOnMobile: true,
         })
