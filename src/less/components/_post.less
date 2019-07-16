@@ -95,6 +95,10 @@
         }
     }
 
+    code a:not([data-ignore-link-styling]) {
+        border-color: currentColor;
+    }
+
     pre, :not(pre) > code {
         @apply .my-4 .rounded-lg;
     }
