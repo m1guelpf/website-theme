@@ -15,7 +15,7 @@ if (document.querySelector('[data-comment-count]')) {
             }
         }).then(response => {
             Object.entries(response.data.commentCounts).forEach(result => {
-                paths[result[0]].innerHTML = `&mdash; ${result[1]} ${result[1] == 1 ? 'comment':'comments'}`
+                paths[result[0]].innerHTML = `&mdash; ${result[1] + 1} ${result[1] == 0 ? 'comment':'comments'}`
             })
         }).catch(error => {
             console.log("[commento] error: " + error.message)
