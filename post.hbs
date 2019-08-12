@@ -84,5 +84,23 @@
 
     <div id="commento"></div>
 
+    <div class="mt-10 max-w-3xl lg:mx-auto mx-6 flex items-center justify-between">
+        {{#next_post}}
+            <a href="{{ url }}" class="group shadow-md bg-white hover:bg-gradient px-4 py-4 border-sepia-300 rounded-lg">
+                <div class="text-sm text-sepia-300 uppercase group-hover:hidden">next article</div>
+                <div class="text-sm text-sepia-100 uppercase hidden group-hover:block">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }}</div>
+                <div class="group-hover:text-sepia-300">{{ title }}</div>
+            </a>
+        {{/next_post}}
+        
+        {{#prev_post}}
+            <a href="{{ url }}" class="group shadow-md bg-white hover:bg-gradient px-4 py-4 border-sepia-300 rounded-lg">
+                <div class="text-sm text-sepia-300 uppercase text-right group-hover:hidden">previous article</div>
+                <div class="text-sm text-sepia-100 uppercase text-right hidden group-hover:block">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }}</div>
+                <div class="group-hover:text-sepia-300">{{ title }}</div>
+            </a>
+        {{/prev_post}}
+    </div>
+
     <script defer src="https://comments.m1guelpf.me/js/commento.js" data-no-fonts="true"></script>
 {{/post}}
