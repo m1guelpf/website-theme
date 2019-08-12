@@ -84,19 +84,19 @@
 
     <div id="commento"></div>
 
-    <div class="mt-10 max-w-3xl lg:mx-auto mx-6 flex items-center justify-between">
+    <div class="mt-10 max-w-3xl lg:mx-auto mx-6 flex flex-col md:flex-row items-center justify-between md:w-auto">
         {{#next_post}}
-            <a href="{{ url }}" class="group shadow-md bg-white hover:bg-gradient px-4 py-4 border-sepia-300 rounded-lg">
-                <div class="text-sm text-sepia-300 uppercase group-hover:hidden">next article</div>
+            <a href="{{ url }}" class="group shadow-md bg-white hover:bg-gradient px-4 py-4 border-sepia-300 rounded-lg mb-4 md:mb-0 w-full">
+                <div class="text-sm text-sepia-300 uppercase group-hover:hidden"><span class="md:hidden">&larr;</span> next article</div>
                 <div class="text-sm text-sepia-100 uppercase hidden group-hover:block">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }}</div>
                 <div class="group-hover:text-sepia-300">{{ title }}</div>
             </a>
         {{/next_post}}
         
         {{#prev_post}}
-            <a href="{{ url }}" class="group shadow-md bg-white hover:bg-gradient px-4 py-4 border-sepia-300 rounded-lg">
-                <div class="text-sm text-sepia-300 uppercase text-right group-hover:hidden">previous article</div>
-                <div class="text-sm text-sepia-100 uppercase text-right hidden group-hover:block">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }}</div>
+            <a href="{{ url }}" class="group shadow-md bg-white hover:bg-gradient px-4 py-4 border-sepia-300 rounded-lg w-full md:w-auto">
+                <div class="text-sm text-sepia-300 uppercase md:text-right group-hover:hidden">previous article <span class="md:hidden">&rarr;</span></div>
+                <div class="text-sm text-sepia-100 uppercase md:text-right hidden group-hover:block">{{ date format="MMMM DD, YYYY" }} &mdash; {{ reading_time }}</div>
                 <div class="group-hover:text-sepia-300">{{ title }}</div>
             </a>
         {{/prev_post}}
