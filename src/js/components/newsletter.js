@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const newsletterForm = document.querySelector('[data-newsletter-form]')
 const newsletterSuccess = document.querySelector('[data-newsletter-success]')
 const emailField = document.querySelector('[data-email-field]')
@@ -14,7 +16,7 @@ if (newsletterForm && emailField && newsletterSuccess) {
     newsletterForm.addEventListener('submit', e => {
         e.preventDefault()
 
-        window.axios.post('https://newsletter.m1guelpf.me/subscribe-ajax.php', {
+        axios.post('https://newsletter.m1guelpf.me/subscribe-ajax.php', {
             email: emailField.value,
         }).then(response => {
             if (response.data == 1) {

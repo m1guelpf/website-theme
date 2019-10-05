@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 if (document.querySelector('[data-comment-count]')) {
     const paths = {}
 
@@ -5,7 +7,7 @@ if (document.querySelector('[data-comment-count]')) {
         paths[el.getAttribute('data-comments-for')] = el
     })
 
-    window.axios.post('https://comments.m1guelpf.me/api/comment/count', {
+    axios.post('https://comments.m1guelpf.me/api/comment/count', {
         domain: parent.location.host,
         paths: Object.keys(paths)
     }, {
