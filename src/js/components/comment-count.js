@@ -19,6 +19,4 @@ if (document.querySelector('[data-comment-count]')) {
     }).catch(error => {
         console.log("[commento] error: " + error.message)
     })
-    })
-
 }
