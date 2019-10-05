@@ -14,23 +14,21 @@ if (newsletterForm && emailField && newsletterSuccess) {
     newsletterForm.addEventListener('submit', e => {
         e.preventDefault()
 
-        import('axios').then(axios => {
-            axios.post('https://newsletter.m1guelpf.me/subscribe-ajax.php', {
-                email: emailField.value,
-            }).then(response => {
-                if (response.data == 1) {
-                    newsletterForm.style.display = 'none'
-                    newsletterSuccess.style.display = null
-    
-                    try {
-                        localStorage.setItem('subscribedToNewsletter', true);
-                    } catch (err) {}
-                } else {
-                    alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
-                }
-            }).catch(() => {
+        window.axios.post('https://newsletter.m1guelpf.me/subscribe-ajax.php', {
+            email: emailField.value,
+        }).then(response => {
+            if (response.data == 1) {
+                newsletterForm.style.display = 'none'
+                newsletterSuccess.style.display = null
+
+                try {
+                    localStorage.setItem('subscribedToNewsletter', true);
+                } catch (err) {}
+            } else {
                 alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
-            })
+            }
+        }).catch(() => {
+            alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
         })
     })
 }

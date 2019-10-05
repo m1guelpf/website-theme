@@ -1,6 +1,9 @@
 import 'instant.page';
-import './lib/prism';
+import axios from 'axios';
 
+window.axios = axios
+
+import './lib/prism';
 import './components/darkMode';
 import './components/feature-image';
 import './components/koeing-gallery';

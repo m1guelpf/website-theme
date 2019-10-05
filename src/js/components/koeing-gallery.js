@@ -1,3 +1,5 @@
+import mediumZoom from 'medium-zoom'
+
 var images = document.querySelectorAll('.kg-gallery-image img');
 
 images.forEach(image => {
@@ -12,11 +14,9 @@ images.forEach(image => {
 
 if (document.querySelector('.post-template')) {
     window.addEventListener('load', () => {
-        import('medium-zoom').then(mediumZoom => {
-            mediumZoom.default('article img:not(.no-zoomable)', {
-                margin: 24,
-                background: 'var(--sepia-500)'
-            });
-        })
+        mediumZoom('article .kg-image-card img:not(.no-zoomable)', {
+            margin: 24,
+            background: 'var(--sepia-500)'
+        });
     }, false);
 }
