@@ -22,6 +22,8 @@ if (newsletterForm && emailField && newsletterSuccess) {
             if (response.data == 1) {
                 newsletterForm.style.display = 'none'
                 newsletterSuccess.style.display = null
+                
+                fathom('trackGoal', 'Z8TWLFZX', 0);
 
                 try {
                     localStorage.setItem('subscribedToNewsletter', true);
