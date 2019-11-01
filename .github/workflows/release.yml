@@ -1,0 +1,22 @@
+name: Add theme artifact to release
+
+on: [release]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build assets
+      uses: elstudio/actions-js-build/build@v2
+      with:
+        args: run prod
+        
+    - name: Upload artifact
+      uses: TheDoctor0/zip-release@v0.2.0
+      with:
+        filename: 'mp-theme.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
