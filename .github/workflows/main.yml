@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Generate ZIP file
+      uses: elstudio/actions-js-build/build@v2
+      with:
+        args: run zip
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: mp-theme
+        path: dist/mp-theme.zip
