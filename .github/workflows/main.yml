@@ -1,6 +1,11 @@
 name: Deploy Theme
 
-on: [push]
+on:
+  push:
+    paths:
+    - '**.hbs'
+    - 'src/**'
+    - 'package.json'
 
 jobs:
   build:
