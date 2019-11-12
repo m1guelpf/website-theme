@@ -8,7 +8,7 @@
         <header class="max-w-4xl md:max-w-full mx-6 md:mx-0 relative z-20 flex items-center justify-around flex-col-reverse md:bg-white md:dark:bg-sepia-500 md:flex-row md:rounded-br-huge background-transition">
             {{#if feature_image}}
                 <div id="blobbed" class="my-4">
-                    <img srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 2000w" src="{{img_url feature_image size="m"}}" sizes="(max-width: 1000px) 400px, 700px" class="rounded flex shadow max-h-sm" loading="lazy" alt="{{ title }}">
+                    <img srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 2000w" src="{{img_url feature_image size="m"}}" sizes="(max-width: 1000px) 400px, 700px" class="rounded flex shadow max-h-sm" loading="lazy" alt="{{ title }}" data-feature-image>
                 </div>
             {{/if}}
             <div class="{{#if feature_image}}max-w-lg{{else}}max-w-4xl{{/if}} mx-auto md:mx-0 md:ml-2 lg:ml-0 flex flex-col justify-center z-20">
