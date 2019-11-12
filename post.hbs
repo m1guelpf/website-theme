@@ -21,7 +21,7 @@
                 {{#unless feature_image}}
                 <div class="flex flex-col md:flex-row items-center justify-between max-w-2xl lg:max-w-3xl mb-4">
                 {{/unless}}
-                <p class="hidden md:block text-center md:text-left">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank">{{authors separator=" | " autolink="false"}}</a></p>
+                <p class="hidden md:block text-center md:text-left">published <time datetime="{{date format="YYYY-MM-DD"}}">{{date timeago="true"}}</time> by <a href="https://miguelpiedrafita.com" class="font-semibold hover:text-blue-500" target="_blank" data-author>{{authors separator=" | " autolink="false"}}</a></p>
                 <div class="md:mt-4{{#unless feature_image}} md:mt-0{{/unless}} md:mb-4 flex items-center justify-center md:justify-start">
                     <svg class="w-5 h-5 mr-1 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="md:w-3xl mx-6 lg:mx-auto ">
-        <article id="article" class="animation animation-fadeInUp animation-delay-4">
+        <article id="article" class="animation animation-fadeInUp animation-delay-4" data-article>
             {{content}}
         </article>
     </div>
