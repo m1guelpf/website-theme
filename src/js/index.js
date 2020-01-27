@@ -9,6 +9,7 @@ import './components/external-links';
 import './components/article-listings';
 import './components/newsletter';
 import './components/comment-count';
+import './components/og-images';
 
 Array.from(document.getElementsByTagName('a')).forEach(link => {
     link.addEventListener('transitionrun', () => {
