@@ -14,7 +14,12 @@ images.forEach(image => {
 
 if (document.querySelector('.post-template')) {
     window.addEventListener('load', () => {
-        mediumZoom('article .kg-image-card img:not(.no-zoomable)', {
+        const zoomImages = [
+            ...document.querySelectorAll('article .kg-image-card img:not(.no-zoomable)'),
+            ...document.querySelectorAll('article .kg-gallery-image img:not(.no-zoomable)')
+        ]
+
+        mediumZoom(zoomImages, {
             margin: 24,
             background: 'var(--sepia-500)'
         });
