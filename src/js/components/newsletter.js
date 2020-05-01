@@ -16,10 +16,10 @@ if (newsletterForm && emailField && newsletterSuccess) {
     newsletterForm.addEventListener('submit', e => {
         e.preventDefault()
 
-        axios.post('https://newsletter.m1guelpf.me/subscribe-ajax.php', {
+        axios.post('https://newsletter.m1guelpf.me/api/subscribe/8d2265d5-111d-41b2-b170-11d4aff0dca7', {
             email: emailField.value,
         }).then(response => {
-            if (response.data == 1) {
+            if (response.data.success) {
                 newsletterForm.style.display = 'none'
                 newsletterSuccess.style.display = null
                 
@@ -29,7 +29,7 @@ if (newsletterForm && emailField && newsletterSuccess) {
                     localStorage.setItem('subscribedToNewsletter', true);
                 } catch (err) {}
             } else {
-                alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
+                alert(response.data.message)
             }
         }).catch(() => {
             alert('Something went wrong. Please try again or DM @m1guelpf on Twitter :)')
