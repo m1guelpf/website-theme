@@ -1,0 +1,35 @@
+.avatar {
+	figcaption {
+		top: .5rem;
+		left: 3.8rem;
+		transform: translate3d(0, 25%, 0) rotate(4deg);
+		transition: all .3s ease;
+		transition-delay: .1s;
+
+		&:after {
+			content: '';
+			left: -0.5rem;
+			border-top: .5rem solid transparent;
+			border-bottom: .5rem solid transparent;
+			border-right: .5rem solid var(--white);
+
+			@apply absolute inset-y-0 w-0 h-0 m-auto;
+		}
+	}
+
+	img {
+		transform: rotate(-8deg) scale(1);
+		transition: all .25s ease;
+	}
+	
+	&:hover {
+		figcaption {
+			opacity: 1;
+			transform: translate3d(0, 0, 0) rotate(0deg);
+		}
+
+		img {
+			transform: rotate(0deg) scale(1.2);
+		}
+	}
+}

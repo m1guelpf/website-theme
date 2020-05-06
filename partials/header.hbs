@@ -1,8 +1,12 @@
-<div class="pt-6 max-w-4xl lg:mx-auto mx-6">
+<div class="sm:mt-4 max-w-6xl lg:mx-auto mx-6">
     <nav class="flex flex-col md:flex-row items-center justify-between pb-6">
-        <div class="text-gradient flex-1 uppercase text-sm font-medium tracking-px text-center md:text-left">
-            <a href="{{ @site.url }}">Miguel Piedrafita &mdash; 18-&#65279;year-&#65279;old&nbsp;<span
-                    class="inline md:hidden">indie&nbsp;</span>maker</a>
+        <div class="text-sepia-900 flex-1 uppercase text-sm tracking-wider text-center md:text-left">
+            <a class="border-b-2 border-sepia-900 font-main text-transition" href="{{ @site.url }}">
+				<figure class="avatar relative">
+					<figcaption class="absolute py-1 px-2 rounded bg-gradient z-20 shadow-md text-center hidden sm:block opacity-0 text-white">New website under construction 👀</figcaption>
+					<img class="rounded-full border-4 border-white w-12 h-12 shadow-md" src="https://twitter-avatar.now.sh/m1guelpf" />
+				</figure>
+			</a>
         </div>
         <div class="mt-6 md:mt-0">
             {{{ navigation }}}

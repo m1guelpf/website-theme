@@ -1,5 +1,5 @@
-#article {
-    @apply .font-body .leading-relaxed;
+#article, .article {
+    @apply .font-main .leading-relaxed;
 
     h1 {
         @apply .text-4xl .my-6;
@@ -14,7 +14,7 @@
     }
 
     p {
-        @apply .font-medium .text-xl .my-6 .text-justify;
+        @apply .font-light .text-xl .my-6 .text-justify;
     }
 
     a:not([data-ignore-link-styling]) {
@@ -42,7 +42,7 @@
     }
 
     blockquote {
-        @apply .italic .border-l-4 .pl-2 .text-xl;
+        @apply .italic .border-l-4 .border-sepia-900 .pl-2 .text-xl;
     }
 
     strong {

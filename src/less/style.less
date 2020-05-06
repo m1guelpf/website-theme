@@ -1,6 +1,9 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* purgecss start ignore */
+@import "components/_fonts";
 @import "components/_darkMode";
 @import "components/_loadAnimation";
 @import "components/_navigation";
@@ -8,13 +11,14 @@
 @import "components/_comments";
 @import "components/_listing";
 @import "components/_404";
+@import "components/_avatar";
 /* purgecss end ignore */
 
-@tailwind components;
+
 
 @import "components/_gradient";
 
-@tailwind utilities;
+
 
 .box-decoration-break-clone {
     box-decoration-break: clone;

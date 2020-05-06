@@ -1,18 +1,18 @@
 {{!< default}}
 
-<div class="pt-6 max-w-4xl lg:mx-auto mx-6">
+<div class="pt-6 max-w-6xl lg:mx-auto mx-6">
     {{> header }}
     <div class="mt-16 animation animation-fadeInUp animation-delay-2">
-        <h3 class="text-4xl font-semibold bg-white inline -mx-2 box-decoration-break-clone px-2 pt-.2 pb-1">Join my newsletter</h3>
+        <h3 class="inline-block rounded-lg m-0 text-sepia-900 bg-white text-4xl px-3 font-main" style="transform: rotate(-1deg);box-shadow: 0 0 4px var(--white);transition:color 1s ease-in, background 1s ease-in,box-shadow 1s ease-in;">Join my newsletter</h3>
     </div>
-    <div id="article" class="mt-12 animation animation-fadeInUp animation-delay-4">
+    <div class="article mt-8 animation animation-fadeInUp animation-delay-4">
         <p>I send an email every saturday with <span class="highlight">project updates, article drafts &amp; general thoughts.</span> I'll never spam you or share your information with anyone.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-    <div class="max-w-3xl mx-auto w-full text-xl shadow rounded-full">
-        <form class="flex flex-col md:flex-row items-center items-stretch justify-center" method="POST" data-newsletter-form>
-            <input type="email" class="flex-1 rounded-full md:rounded-r-none px-4 py-2 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100 mb-4 md:mb-0" placeholder="panic@thedis.co" required data-email-field>
-            <button class="rounded-full md:rounded-l-none bg-gradient text-white py-2 px-4 font-semibold focus:outline-none focus:shadow-outline" style="transition: color 1s ease-in;" type="submit"><span>Subscribe</span></button>
+    <div class="max-w-3xl mx-auto w-full text-xl shadow rounded-full" x-data="newsletter()" x-init="init()">
+        <form class="flex flex-col md:flex-row items-center items-stretch justify-center" x-on:submit.prevent="submitForm()" x-show="!subscribed">
+            <input type="email" class="flex-1 rounded-full md:rounded-r-none px-4 py-2 font-medium focus:outline-none focus:shadow-outline bg-white dark:bg-sepia-100 mb-4 md:mb-0" placeholder="panic@thedis.co" required x-model="email">
+            <button class="rounded-full md:rounded-l-none bg-gradient text-white py-2 px-4 font-semibold focus:outline-none focus:shadow-outline" style="transition: color 1s ease-in;" type="submit">Subscribe</button>
         </form>
-        <div class="text-center bg-gradient text-white rounded-lg md:rounded-full font-semibold py-1 md:py-4 px-4 md:px-6" style="display:none;" data-newsletter-success>
+        <div class="text-center bg-gradient text-white rounded-lg md:rounded-full font-semibold py-1 md:py-4 px-4 md:px-6" style="display:none;" x-show="subscribed">
             <p style="margin:0;text-align:center;" style="transition: color 1s ease-in;">You've been successfully subscribed!</p>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <section class="footnotes">
         <ol class="footnotes-list" style="margin-left:0;margin-right:0;">
             <li id="fn1" class="footnote-item">
-                <p>Ideally everyone should, but sadly this isn't always the case. I believe privacy is a fundamental human right and the lack of it is one of the worst problems in today's society, and I promise you I'd never sell or trade your information. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+                <p>Ideally everyone should, but sadly this isn't always the case. I believe privacy is a fundamental human right and the lack of it is one of the worst problems in today's society, and I promise you I'd never sell or trade your information.</p>
             </li>
         </ol>
     </section>

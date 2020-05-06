@@ -21,7 +21,8 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
  */
 
 mix
-    .less('src/less/style.less', 'assets/css')
+	.less('src/less/style.less', 'assets/css')
+	.copy('src/fonts/*', 'assets/fonts')
     .options({
         postCss: [
             require('tailwindcss'),

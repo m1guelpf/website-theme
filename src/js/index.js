@@ -1,3 +1,4 @@
+import 'alpinejs';
 import 'instant.page';
 
 import './lib/prism';
