@@ -54,7 +54,10 @@ module.exports = {
       },
       width: theme => {
         return theme('maxWidth')
-      },
+	  },
+	  lineHeight: {
+		'6': '1.5rem'
+	  },
     },
   },
   variants: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus', 'active', 'dark',],

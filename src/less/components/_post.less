@@ -99,12 +99,14 @@
         border-color: currentColor;
     }
 
-    pre, :not(pre) > code {
+    pre {
         @apply .my-4 .rounded-lg;
     }
 
     :not(pre) > code {
-        @apply .text-sm;
+		@apply bg-sepia-100 text-sm leading-6 inline-block rounded px-1 whitespace-no-wrap text-sepia-900 font-normal align-baseline;
+		
+		transition: background-color 1s ease-in, color 1s ease-in;
     }
 
     :not(pre) {
