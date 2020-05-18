@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   theme: {
     extend: {
@@ -15,10 +17,9 @@ module.exports = {
         'black': 'var(--black)'
       },
       fontFamily: {
-        'sans': ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-        'sans-no-emoji': ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Segoe UI Symbol"'],
-        'main': ['Protogrotesk', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-        'mono': ['"Operator Mono Lig"', '"Operator Mono"', '"Fira Code"', '"Source Sans Pro"', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+        'sans-no-emoji': defaultTheme.fontFamily.sans.filter(font => !font.includes('Emoji')),
+        'main': ['Protogrotesk', ...defaultTheme.fontFamily.sans],
+        'mono': ['"Jetbrains Mono"', '"Operator Mono Lig"', '"Operator Mono"', '"Fira Code"', '"Source Sans Pro"', ...defaultTheme.fontFamily.mono]
       },
       letterSpacing: {
         px: '.1px'
