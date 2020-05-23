@@ -4,11 +4,6 @@ require('mix-tailwindcss');
 
 Mix.manifest.refresh = _ => void 0
 
-const purgecss = require('@fullhuman/postcss-purgecss')({
-    content: ['./**/*.hbs'],
-    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-})
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -26,14 +21,8 @@ mix
     .options({
         postCss: [
             require('tailwindcss'),
-                require('autoprefixer'),
-                ...mix.inProduction() ?
-                [purgecss, require('cssnano')] :
-                []
+			require('autoprefixer'),
         ]
-    })
-    .babelConfig({
-        plugins: ['@babel/plugin-syntax-dynamic-import'],
     })
     .webpackConfig({
         output: {
