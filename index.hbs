@@ -10,9 +10,24 @@
       <h3 class="inline-block rounded-lg m-0 text-sepia-900 bg-white text-4xl px-3 font-main" style="transform: rotate(-1deg);box-shadow: 0 0 4px var(--white);transition:color 1s ease-in, background 1s ease-in,box-shadow 1s ease-in;">Ficción</h3>
     {{/is}}
   </div>
-  <div class="mt-12 animation animation-fadeInUp animation-delay-4">
+  <div class="mt-5 animation animation-fadeInUp animation-delay-4">
+	{{#get "posts" limit="4" filter="featured:true"}}
+		<div class="grid row-gap-3 col-gap-0 grid-cols-1 lg:grid-cols-2 lg:col-gap-3 mb-10">
+			{{#foreach posts}}
+				<a href="{{ url }}" class="group bg-2 p-5 relative bg-gradient-featured background-transition">
+					<div class="h-full p-5 bg-white background-transition w-full flex flex-col justify-center background-transition border-2 rounded group-hover:text-brand">
+						<p class="uppercase font-semibold text-sm mb-4 lg:mb-2 inline-flex items-center">
+							<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path></svg>
+							<span>Featured post | {{ date format="YYYY-MM-DD" }}</span>
+						</p>
+						<h2 class="font-main leading-relaxed tracking-wide text-2xl">{{title}}</h2>
+					</div>
+				</a>
+			{{/foreach}}
+		</div>
+	{{/get}}
     {{#foreach posts}}
-      <article class="{{post_class}} opacity-transition height-transition" data-article-listing {{#if featured}}data-featured{{else}}data-not-featured{{/if}}>
+      <article class="{{post_class}} opacity-transition height-transition">
           <header class="post-header">
 				<span class="text-sepia-300 uppercase font-main text-xs tracking-wide mb-1 inline-flex items-center">
 					{{#if featured}}

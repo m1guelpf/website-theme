@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'inherit': 'inherit',
-        'none': 'none',
+		'none': 'none',
+		'brand': 'var(--brand)',
         'yellow-300': 'var(--yellow-300)',
         'orange-400': 'var(--orange-400)',
         'sepia-500': 'var(--sepia-500)',
@@ -14,7 +15,11 @@ module.exports = {
         'sepia-100': 'var(--sepia-100)',
         'blue-500': 'var(--blue-500)',
         'white': 'var(--white)',
-        'black': 'var(--black)'
+		'black': 'var(--black)',
+		'featured-theme-1': '#22D2A0',
+		'featured-theme-2': '#E1CC13',
+		'featured-theme-3': '#FD9065',
+		'featured-theme-4': '#55CAE7',
       },
       fontFamily: {
         'sans-no-emoji': defaultTheme.fontFamily.sans.filter(font => !font.includes('Emoji')),
@@ -58,6 +63,9 @@ module.exports = {
 	  },
 	  lineHeight: {
 		'6': '1.5rem'
+	  },
+	  backgroundSize: {
+		2: '0.25rem 0.25rem',
 	  },
     },
   },

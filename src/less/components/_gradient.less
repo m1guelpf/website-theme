@@ -1,4 +1,4 @@
-@variants hover {
+@variants hover, group-hover {
     .bg-gradient {
         background: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
     }
@@ -16,4 +16,58 @@
         -webkit-background-clip: inherit;
         -webkit-text-fill-color: inherit;
     }
+}
+
+.bg-gradient-featured {
+	@apply relative;
+	z-index: 1;
+
+	> div {
+		transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+	}
+
+	&:first-of-type {
+		background-image: radial-gradient(theme('colors.featured-theme-1') 35%, transparent 35%);
+
+		> div {
+			border-color: theme('colors.featured-theme-1');
+		}
+	}
+	&:nth-of-type(2) {
+		background-image: radial-gradient(theme('colors.featured-theme-2') 35%, transparent 35%);
+		
+		> div {
+			border-color: theme('colors.featured-theme-2');
+		}
+	}
+	&:nth-of-type(3) {
+		background-image: radial-gradient(theme('colors.featured-theme-3') 35%, transparent 35%);
+
+		> div {
+			border-color: theme('colors.featured-theme-3');
+		}
+	}
+	&:nth-of-type(4) {
+		background-image: radial-gradient(theme('colors.featured-theme-4') 35%, transparent 35%);
+
+		> div {
+			border-color: theme('colors.featured-theme-4');
+		}
+	}
+	&::before {
+		@apply absolute inset-0 opacity-0 bg-2;
+		content: "";
+		z-index: -1;
+		transition: opacity 0.3s ease-in-out;
+		
+		background-image: radial-gradient(rgb(242, 112, 156) 35%, transparent 35%);
+	}
+	&:hover {
+		&::before {
+			@apply opacity-100;
+		}
+		> div {
+			border-color: rgb(242, 112, 156);
+		}
+	}
 }
